@@ -1,0 +1,65 @@
+.btn {
+  padding: 0.8rem 2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid;
+  cursor: pointer;
+  transition: var(--transition-speed);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--redline-red);
+  color: var(--text-primary);
+  border-color: var(--redline-red);
+  box-shadow: var(--neon-glow);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--redline-red);
+  box-shadow: var(--neon-glow-strong);
+  transform: translateY(-2px);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--redline-red);
+  border-color: var(--redline-red);
+  box-shadow: var(--neon-glow);
+}
+
+.btn-secondary:hover {
+  background: var(--redline-red);
+  color: var(--text-primary);
+  box-shadow: var(--neon-glow-strong);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: var(--neon-glow);
+  }
+  50% {
+    box-shadow: var(--neon-glow-strong);
+  }
+}
+

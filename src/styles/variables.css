@@ -1,0 +1,64 @@
+:root {
+  /* Typography */
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  
+  /* Transitions */
+  --transition-speed: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-glow: 0.3s ease-in-out;
+}
+
+/* Dark Theme (Default) */
+[data-theme="dark"] {
+  /* Color Palette */
+  --midnight-black: #101010;
+  --redline-red: #FF2B2B;
+  --asphalt-gray: #2D2D2D;
+  --smoke-white: #F2F2F2;
+  --bg-primary: #101010;
+  --bg-secondary: #2D2D2D;
+  --text-primary: #F2F2F2;
+  --text-secondary: rgba(242, 242, 0.8);
+  --border-color: rgba(255, 43, 43, 0.2);
+  
+  /* Effects */
+  --neon-glow: 0 0 10px rgba(255, 43, 43, 0.5),
+               0 0 20px rgba(255, 43, 43, 0.3),
+               0 0 30px rgba(255, 43, 43, 0.2);
+  --neon-glow-strong: 0 0 15px rgba(255, 43, 43, 0.8),
+                      0 0 30px rgba(255, 43, 43, 0.6),
+                      0 0 45px rgba(255, 43, 43, 0.4);
+  
+  /* Shadows */
+  --shadow-dramatic: 0 10px 30px rgba(0, 0, 0, 0.5),
+                     0 0 20px rgba(255, 43, 43, 0.2);
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  /* Color Palette */
+  --midnight-black: #F8F8F8;
+  --redline-red: #FF2B2B;
+  --asphalt-gray: #E8E8E8;
+  --smoke-white: #1A1A1A;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F8F8;
+  --text-primary: #1A1A1A;
+  --text-secondary: rgba(26, 26, 26, 0.8);
+  --border-color: rgba(255, 43, 43, 0.3);
+  
+  /* Effects */
+  --neon-glow: 0 0 10px rgba(255, 43, 43, 0.4),
+               0 0 20px rgba(255, 43, 43, 0.2),
+               0 0 30px rgba(255, 43, 43, 0.1);
+  --neon-glow-strong: 0 0 15px rgba(255, 43, 43, 0.6),
+                      0 0 30px rgba(255, 43, 43, 0.4),
+                      0 0 45px rgba(255, 43, 43, 0.2);
+  
+  /* Shadows */
+  --shadow-dramatic: 0 10px 30px rgba(0, 0, 0, 0.15),
+                     0 0 20px rgba(255, 43, 43, 0.1);
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
