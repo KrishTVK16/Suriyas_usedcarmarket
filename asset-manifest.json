@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Suriyas_usedcarmarket/static/css/main.c0d7dac8.css",
+    "main.js": "/Suriyas_usedcarmarket/static/js/main.ac9c8d50.js",
+    "static/js/453.10668e82.chunk.js": "/Suriyas_usedcarmarket/static/js/453.10668e82.chunk.js",
+    "index.html": "/Suriyas_usedcarmarket/index.html",
+    "main.c0d7dac8.css.map": "/Suriyas_usedcarmarket/static/css/main.c0d7dac8.css.map",
+    "main.ac9c8d50.js.map": "/Suriyas_usedcarmarket/static/js/main.ac9c8d50.js.map",
+    "453.10668e82.chunk.js.map": "/Suriyas_usedcarmarket/static/js/453.10668e82.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0d7dac8.css",
+    "static/js/main.ac9c8d50.js"
+  ]
+}
