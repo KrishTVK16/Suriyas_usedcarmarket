@@ -1,0 +1,166 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Button from '../components/UI/Button';
+import './Login.css';
+
+const Login = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+    userType: 'buyer'
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    alert(isLogin ? 'Login successful!' : 'Registration successful!');
+  };
+
+  return (
+    <div className="login">
+      <div className="login-container">
+        <Link to="/" className="login-logo">
+          <span className="logo-text">UsedCar</span>
+          <span className="logo-accent">Market</span>
+        </Link>
+        <div className="login-card">
+          <div className="login-header">
+            <h1>{isLogin ? 'Login' : 'Register'}</h1>
+            <p>{isLogin ? 'Welcome back!' : 'Create your account'}</p>
+          </div>
+
+          <div className="user-type-toggle">
+            <button
+              className={`toggle-btn ${formData.userType === 'buyer' ? 'active' : ''}`}
+              onClick={() => setFormData({ ...formData, userType: 'buyer' })}
+            >
+              Buyer
+            </button>
+            <button
+              className={`toggle-btn ${formData.userType === 'seller' ? 'active' : ''}`}
+              onClick={() => setFormData({ ...formData, userType: 'seller' })}
+            >
+              Seller
+            </button>
+          </div>
+
+          <form className="login-form" onSubmit={handleSubmit}>
+            {!isLogin && (
+              <div className="form-group">
+                <label>Full Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required={!isLogin}
+                  placeholder="Your Name"
+                />
+              </div>
+            )}
+
+            <div className="form-group">
+              <label>Email *</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            {!isLogin && (
+              <div className="form-group">
+                <label>Phone *</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required={!isLogin}
+                  placeholder="+91 123 456 7890"
+                />
+              </div>
+            )}
+
+            <div className="form-group">
+              <label>Password *</label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                placeholder="••••••••"
+              />
+            </div>
+
+            {isLogin && (
+              <div className="form-options">
+                <label className="checkbox-label">
+                  <input type="checkbox" />
+                  Remember me
+                </label>
+                <Link to="#" className="forgot-link">Forgot Password?</Link>
+              </div>
+            )}
+
+            <Button type="submit" variant="primary" className="submit-btn">
+              {isLogin ? 'Login' : 'Register'}
+            </Button>
+
+            <div className="social-login">
+              <div className="divider">
+                <span>Or continue with</span>
+              </div>
+              <div className="social-buttons">
+                <button type="button" className="social-btn google-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                  <span>{isLogin ? 'Login' : 'Sign up'} with Google</span>
+                </button>
+                <button type="button" className="social-btn facebook-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <span>{isLogin ? 'Login' : 'Sign up'} with Facebook</span>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div className="login-footer">
+            <p>
+              {isLogin ? "Don't have an account? " : 'Already have an account? '}
+              <button
+                className="switch-link"
+                onClick={() => setIsLogin(!isLogin)}
+              >
+                {isLogin ? 'Register' : 'Login'}
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
+
